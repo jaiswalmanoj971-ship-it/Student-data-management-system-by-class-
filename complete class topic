@@ -1,0 +1,199 @@
+   #include <iostream>  
+#include <ctime>
+#include <string>
+ 
+using namespace std;
+                             //class student is created to store student data;
+class student{
+
+  private:
+    string name,dob,address,country;
+    int roll_no;
+    float marks;
+
+    public:           //this data get from user from main function ;
+
+                                                   //defoult parameter constructor:
+
+    student(){
+      cout<<"hello I'm constructor "<<endl;  //this is msg when constructor is called ;
+                              //default value for country ;
+                      // country value directly assign when call :
+      
+    }
+    ~student(){                     //destructor :
+      cout<<"I'm destructor called"<<endl;}
+     
+        
+    student(string n,string d,string a,int r,float marks){
+      name=n;
+      dob=d;
+      address=a;
+      roll_no=r;
+      this->marks=marks;            // this->marks adding this property we can use same name for parameter and class member variable
+      country="India";              //default value for country ;
+
+    }  
+
+
+    void show(){          //this function is called method to show data;
+
+
+      cout<<"Name:"<<name<<endl;
+      cout<<"Date of Birth:"<<dob<<endl;
+      cout<<"Address:"<<address<<endl;
+      cout<<"Roll No:"<<roll_no<<endl;
+      cout<<"Marks:"<<marks<<endl;
+      cout<<"Country:"<<country<<endl;
+
+    }
+
+ 
+
+};
+
+int data(){
+    int n;
+    cout<<"Enter student serial no :";
+    cin>>n;
+   
+   class studentn;
+   string name,dob,address;
+   int roll_no;
+   float marks;
+   cout<<"Enter Name:";
+    getline(cin,name);
+    cout<<"Enter your date of birth:";
+    getline(cin,dob);
+    cout<<"Enter your address:";
+    getline(cin,address);
+    cout<<"Enter your roll no:";
+    cin>>roll_no;
+    cout<<"Enter your marks:";
+    cin>>marks;
+    student();  // this will call default constructor ;for msg purpose:
+    student studentn(name,dob,address,roll_no,marks);
+    studentn.show();
+    
+    return 0;
+}
+
+
+ int main(){
+data();
+  
+ 
+    return 0;
+ }
+
+
+                                //class from other example :
+
+#include <iostream>  
+#include <ctime>
+#include <string>
+ 
+using namespace std;
+                             //class student is created to store student data;
+class student{
+
+  private:
+    string name,dob,address,country;
+    int roll_no;
+    float marks;
+
+    public:           //this data get from user from main function ;
+
+                                                   //defoult parameter constructor:
+
+    student(){
+      cout<<"hello I'm constructor "<<endl;  //this is msg when constructor is called ;
+                              //default value for country ;
+                      // country value directly assign when call :
+      
+    }
+    ~student(){                     //destructor :
+      cout<<"I'm destructor called"<<endl;}
+     
+                                                // parameter constructor:
+
+            // To copy one class data to another class
+            student(student &orignal){
+              cout<<"I'm copy constructor"<<endl;
+              this->name=orignal.name;
+              this->dob=orignal.dob;
+              this->roll_no=orignal.roll_no;
+              this->marks=orignal.marks;
+
+            }
+    
+    student(string n,string d,string a,int r,float marks){
+      name=n;
+      dob=d;
+      address=a;
+      roll_no=r;
+      this->marks=marks;            // this->marks adding this property we can use same name for parameter and class member variable
+      country="India";              //default value for country ;
+
+    }  
+
+
+    void show(){          //this function is called method to show data;
+
+
+      cout<<"Name:"<<name<<endl;
+      cout<<"Date of Birth:"<<dob<<endl;
+      cout<<"Address:"<<address<<endl;
+      cout<<"Roll No:"<<roll_no<<endl;
+      cout<<"Marks:"<<marks<<endl;
+      cout<<"Country:"<<country<<endl;
+
+    }
+
+ 
+
+};
+
+
+ int main(){
+
+   time_t timestamp = time(0);   //show time for time of execution;
+   class student1;
+   string name,dob,address;
+   int roll_no;
+   float marks;
+   cout<<"Enter Name:";
+    getline(cin,name);
+    cout<<"Enter your date of birth:";
+    getline(cin,dob);
+    cout<<"Enter your address:";
+    getline(cin,address);
+    cout<<"Enter your roll no:";
+    cin>>roll_no;
+    cout<<"Enter your marks:";
+    cin>>marks;
+    student();  // this will call default constructor ;for msg purpose:
+    student student1(name,dob,address,roll_no,marks);
+    student1.show();
+
+
+    student student2(student1);   //this will call default constructor ;
+    student2.show();
+
+
+
+
+   
+    cout<<"Timestamp of Execution: ";
+
+   cout << ctime(&timestamp); 
+
+
+
+    return 0;
+ }
+
+ 
+
+
+ 
